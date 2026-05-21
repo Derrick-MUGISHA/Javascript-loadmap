@@ -85,6 +85,13 @@ if (!(age <= 18)) {
 }
 
  
+let max = 50;
+
+if (!(max >= 50)) {  // (!max >= !50) recommended to (!(max >= 50))
+     console.log("You failed the exam");   // the condition is true 
+} else {
+    console.log("You passed the exam");   // the condition is  false 
+}
 
 // 
 
