@@ -21,3 +21,6 @@ console.log("My age is on second stage " + age);
 
 var age = "thirty";
 console.log("My age is on third stage " + age);
+
+const apiURL = "https://api.example.com/data";
+let userScore = 85;

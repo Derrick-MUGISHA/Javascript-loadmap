@@ -123,8 +123,46 @@ switch (day) {
 
     case "sunday":
         console.log("rest day");
-        // break;
+        break;
 
     default:
         console.log("It's a regular day");
 }
+
+
+
+
+//  else if 
+
+if (condition) {
+//  when condition is true do this
+}
+
+
+if (condition) {
+//  when condition is true do this 
+}else {
+// when condition is false do this
+}
+
+
+
+
+if (condition) {
+// when condition is true do this
+} else if (condition) {
+// when condition is true do this
+} else {
+// when condition is false do this
+} 
+
+
+
+
+
+
+
+
+
+
+// switch statement 
