@@ -1,3 +1,4 @@
+
 // the loops are the repetition of the same code multiple times
 
 // we have the many types of loops these loop type are based on the condition 
@@ -224,3 +225,6 @@ while (guessNumber !== randomNumber) {
 
 
 console.log(`You guessed the number ${randomNumber}`);
+
+
+add(20, 40);
