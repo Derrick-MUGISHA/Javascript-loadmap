@@ -11,15 +11,35 @@
 
   <body>
     <style>
-        #numb4 {
-            border-color: red;
-        }
-        #numb4:disabled {
-            border-color: lightgray;
-            background-color: lightgray;
-        }
+      /* #numb4 {
+        border-color: red;
+      }
+      #numb4:disabled {
+        border-color: lightgray;
+        background-color: lightgray;
+      } */
+
+      #container {
+        width: 800px;
+        height: 400px;
+        position: relative;
+        background: yellow;
+      }
+      #animate {
+        width: 80px;
+        height: 70px;
+        position: absolute;
+        background: red;
+      }
     </style>
-    <section>
+
+    <!-- animation  -->
+    <p><button onclick="myMove()">Click Me</button></p>
+    <div id="container">
+      <div id="animate">My animation will go here</div>
+    </div>
+
+    <!-- <section>
       <div class="main-card">
         <div class="card-image">
           <img
@@ -69,7 +89,7 @@
           </form>
         </div>
       </div
-    </section>
+    </section> -->
 
     <script>
       let paragraph = document.getElementById("card-text-id");
@@ -105,6 +125,23 @@
           text = "Input OK";
         }
         document.getElementById("demo").innerHTML = text;
+      }
+
+      function myMove() {
+        let id = null;
+        const elem = document.getElementById("animate");
+        let pos = 0;
+        clearInterval(id);
+        id = setInterval(frame, 5);
+        function frame() {
+          if (pos == 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+          }
+        }
       }
     </script>
     <!-- <script src="./index.js"></script> -->

@@ -1,0 +1,326 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+
+  --primary: #2563eb;
+  --secondary: #1e293b;
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --border: #e2e8f0;
+}
+
+body.dark {
+
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f8fafc;
+  --border: #334155;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  transition: 0.3s;
+}
+
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.7rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border: 1px solid var(--border);
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin-bottom: 8px;
+}
+
+
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+
+  width: 100%;
+  padding: 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: transparent;
+  color: var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+
+  outline: none;
+  border-color: var(--primary);
+}
+
+.error {
+  display: block;
+  margin-top: 5px;
+  color: var(--danger);
+  font-size: 0.85rem;
+}
+
+
+.primary-btn,
+.theme-btn {
+
+  cursor: pointer;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 12px 20px;
+
+  color: white;
+  background: var(--primary);
+}
+
+.theme-btn {
+  padding: 10px 16px;
+}
+
+
+.strength-container {
+
+  margin-top: 10px;
+  width: 100%;
+  height: 8px;
+
+  background: #ddd;
+  border-radius: 50px;
+
+  overflow: hidden;
+}
+
+#strengthBar {
+
+  width: 0%;
+  height: 100%;
+
+  background: var(--danger);
+
+  transition: 0.3s;
+}
+
+
+.stats-grid {
+
+  display: grid;
+  grid-template-columns: repeat(
+      auto-fit,
+      minmax(220px, 1fr)
+  );
+
+  gap: 20px;
+}
+
+.stat-card {
+
+  padding: 20px;
+  border-radius: 10px;
+
+  text-align: center;
+
+  background: rgba(37,99,235,0.08);
+}
+
+.stat-card h3 {
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.search-wrapper {
+
+  display: flex;
+  gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+.search-wrapper input,
+.search-wrapper select {
+
+  flex: 1;
+
+  padding: 12px;
+  border-radius: 8px;
+
+  border: 1px solid var(--border);
+}
+
+
+.participants-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill,minmax(280px,1fr));
+
+  gap: 20px;
+}
+
+.participant-card {
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--border);
+
+  background: var(--card);
+}
+
+.participant-card h3 {
+  margin-bottom: 10px;
+}
+
+.participant-card p {
+  margin-bottom: 6px;
+}
+
+.card-actions {
+
+  margin-top: 15px;
+
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+
+  border: none;
+  padding: 10px 14px;
+
+  border-radius: 6px;
+  cursor: pointer;
+
+  color: white;
+}
+
+.edit-btn {
+  background: orange;
+}
+
+.delete-btn {
+  background: crimson;
+}
+
+.document-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+  gap: 20px;
+}
+
+.info-box {
+
+  padding: 20px;
+  border-radius: 10px;
+
+  border: 1px solid var(--border);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-box span {
+  opacity: 0.7;
+}
+
+
+.toast {
+
+  position: fixed;
+
+  right: 30px;
+  bottom: 30px;
+
+  background: var(--success);
+  color: white;
+
+  padding: 14px 20px;
+
+  border-radius: 8px;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media(max-width:768px){
+
+  .header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search-wrapper {
+    flex-direction: column;
+  }
+
+  .stats-grid,
+  .document-grid {
+    grid-template-columns: 1fr;
+  }
+}

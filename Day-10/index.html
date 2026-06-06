@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Registration System</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/animations.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <h1>Event Registration System</h1>
+      </div>
+
+      <button id="themeToggle" class="theme-btn">
+        Dark Mode
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Registration Form -->
+    <section class="card">
+
+      <div class="section-header">
+        <h2>Register For Event</h2>
+        <p>Complete the form below.</p>
+      </div>
+
+      <form id="registrationForm" novalidate>
+
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+
+          <input
+            type="text"
+            id="fullName"
+            placeholder="John Doe"
+          />
+
+          <small class="error" id="nameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="john@example.com"
+          />
+
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+
+          <input
+            type="tel"
+            id="phone"
+            placeholder="0781234567"
+          />
+
+          <small class="error" id="phoneError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+
+          <input
+            type="password"
+            id="password"
+            placeholder="********"
+          />
+
+          <div class="strength-container">
+            <div id="strengthBar"></div>
+          </div>
+
+          <small class="error" id="passwordError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">
+            Confirm Password
+          </label>
+
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="********"
+          />
+
+          <small class="error" id="confirmError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="eventCategory">
+            Event Category
+          </label>
+
+          <select id="eventCategory">
+            <option value="">
+              Select Event
+            </option>
+
+            <option value="Frontend Bootcamp">
+              Frontend Bootcamp
+            </option>
+
+            <option value="Backend Workshop">
+              Backend Workshop
+            </option>
+
+            <option value="UI/UX Design">
+              UI/UX Design
+            </option>
+
+            <option value="Cyber Security">
+              Cyber Security
+            </option>
+          </select>
+
+          <small class="error" id="categoryError"></small>
+        </div>
+
+        <button
+          type="submit"
+          id="submitBtn"
+          class="primary-btn"
+        >
+          Register
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- Statistics Dashboard -->
+    <section class="card">
+
+      <div class="section-header">
+        <h2>Dashboard Statistics</h2>
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <h3>Total Registrations</h3>
+          <p id="totalRegistrations">0</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Frontend</h3>
+          <p id="frontendCount">0</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Backend</h3>
+          <p id="backendCount">0</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Design</h3>
+          <p id="designCount">0</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Search -->
+    <section class="card">
+
+      <div class="section-header">
+        <h2>Participants</h2>
+      </div>
+
+      <div class="search-wrapper">
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search participant..."
+        />
+
+        <select id="filterCategory">
+
+          <option value="all">
+            All Categories
+          </option>
+
+          <option value="Frontend Bootcamp">
+            Frontend Bootcamp
+          </option>
+
+          <option value="Backend Workshop">
+            Backend Workshop
+          </option>
+
+          <option value="UI/UX Design">
+            UI/UX Design
+          </option>
+
+          <option value="Cyber Security">
+            Cyber Security
+          </option>
+
+        </select>
+
+      </div>
+
+      <div id="participantsList"
+        class="participants-grid">
+        <!-- add a div -->
+      </div>
+
+    </section>
+
+    <!-- Document References -->
+    <section class="card">
+
+      <div class="section-header">
+        <h2>Document Information Dashboard</h2>
+      </div>
+
+      <div class="document-grid">
+
+        <div class="info-box">
+          <span>Title</span>
+          <strong id="docTitle"></strong>
+        </div>
+
+        <div class="info-box">
+          <span>URL</span>
+          <strong id="docURL"></strong>
+        </div>
+
+        <div class="info-box">
+          <span>Forms</span>
+          <strong id="formCount"></strong>
+        </div>
+
+        <div class="info-box">
+          <span>Images</span>
+          <strong id="imageCount"></strong>
+        </div>
+
+        <div class="info-box">
+          <span>Links</span>
+          <strong id="linkCount"></strong>
+        </div>
+
+        <div class="info-box">
+          <span>Ready State</span>
+          <strong id="readyState"></strong>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">
+    Registration Successful
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/storage.js"></script>
+  <script src="./js/validation.js"></script>
+  <script src="./js/participants.js"></script>
+  <script src="./js/dashboard.js"></script>
+  <script src="./js/documentInfo.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/theme.js"></script>
+  <script src="./js/app.js"></script>
+
+</body>
+</html>
