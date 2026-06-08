@@ -169,7 +169,7 @@ form.addEventListener(
       email: email.value,
       phone: phone.value,
       category: eventCategory.value
-    };
+    }; // construct participant object
 
     Storage.addParticipant(
       participant
