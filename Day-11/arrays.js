@@ -64,7 +64,13 @@ const sliced = letters.slice(0, 5   ); // from index 1 to 3 (not inclusive) crea
 
 
 // these is on a forEach loop that will print the index and value of each element in the nums array
-const nums = [1, 2, 3, 4, 5, 200];
+const nums = [1, 200, 3, 4, 500,7, 12, 5, 20, 8, 9, 10];
+
+const people = [
+  { name: "Alice", age: 30 },
+  { name: "Bob", age: 25 },
+  { name: "Charlie", age: 35 },
+]
 
 nums.forEach((value, index) => {
     console.log(`${index}: ${value}`);
@@ -98,8 +104,53 @@ const findIndexOf = nums.findIndex(num => num > 3);
 const sum = nums.some(num => num > 100); // true if at least one element is greater than 4
 const every = nums.every(num => num > 300); // true if all elements are greater than 0
 const includes = nums.includes(3); // true if the nums array contains the number 3
-console.log(includes);
+//console.log(includes);
 
 
 
+
+// sorting and reordering in an array 
+
+//console.log([1,10,2].sort()); // this will sort the numbers as strings, resulting in [1, 10, 2]
+
+const sortedNums = nums.sort((a, b) => a - b); // these is the sorting of the elements in the ascending order 
+const biggest = nums.sort((a, b) => b - a); // this is the sorting of the elements in the descending order
+
+const sortedPeople = people.sort((a, b) => b.age - a.age); // this is the sorting of the people array based on the age property in ascending order
+
+
+// how to reverse an array 
+
+const Numbers = [1, 2, 3, 4, 5];
+
+const reversed = Numbers.reverse(); // this will reverse the order of the elements in the nums array
+
+
+
+// the spreed operator
+
+const a = [1, 2, 3];
+const nested = [4, 5, 6, [7, 8, 9]];
+
+const copy = [...nested]; 
+
+const b = [4, 5, 6];
+
+const combined = [...a, ...b]; // we take a copy of the elements in the a and b arrays and combine them into a new array called combined
+const copyOfA = [...a]; // this creates a new array that is a copy of the a array, so if we modify copyOfA it will not affect the original a array
+
+const combinedAB = a.concat(b); // this is another way to combine two arrays, it does not modify the original arrays but returns a new array that is the combination of the two arrays
+
+
+// Destructuring an array
+
+const nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const [first, second] = nums2;
+
+const nestedArray = [1, [2, 3], [4, [5]]];
+
+
+console.log(nestedArray.flat());
+console.log(nestedArray.flat(2));
 
