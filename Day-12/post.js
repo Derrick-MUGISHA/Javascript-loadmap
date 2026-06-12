@@ -12,12 +12,8 @@ async function createPost(payload) {
       throw new Error(`HTTP ${res.status}`);
     }
 
-    console.log(res);
-    const json = await res.json();
-    const data = await res.text();
-    console.log(json);
     return res.json();
-    // console.log(res)
+
   } catch (error) {
     console.log(error);
   }

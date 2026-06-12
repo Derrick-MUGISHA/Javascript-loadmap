@@ -36,6 +36,7 @@ fetch("https://dummyjson.com/products")
 // try and catch
 
 async function fetchData() {
+
    try {
        const response = await fetch("https://dummyjson.com/products");
        if (!response.ok) {
@@ -47,6 +48,7 @@ async function fetchData() {
    } catch (error) {
       console.log(error);
    }
+   
 }
 
 fetchData();
